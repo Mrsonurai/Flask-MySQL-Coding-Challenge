@@ -2,15 +2,13 @@ from flask import Flask, render_template, request, redirect, url_for, flash
 from flask_sqlalchemy import SQLAlchemy
  
  
- 
- 
 app = Flask(__name__)
 app.secret_key = "Secret Key"
  
-#SqlAlchemy Database Configuration With Mysql
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:''@localhost/crud'
+#SqlAlchemy Database Configuration With Postgres
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:7699415179sub#@localhost[5432]/CodingChallenge' #
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
- 
+
 db = SQLAlchemy(app)
  
  
