@@ -4,9 +4,13 @@ from flask_sqlalchemy import SQLAlchemy
  
 app = Flask(__name__)
 app.secret_key = "Secret Key"
- 
+
+username='postgres'
+password=''
+dbName='CodingChallenge'
+
 #SqlAlchemy Database Configuration With Postgres
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:7699415179sub#@localhost[5432]/CodingChallenge' #
+app.config['SQLALCHEMY_DATABASE_URI'] = f'postgresql://{username}:{password}@localhost/{dbName}' #
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
